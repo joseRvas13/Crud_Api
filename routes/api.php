@@ -1,24 +1,9 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\productosController;
 
-Route::get('/productos', [ProductosController::class, 'index']);
-
-Route::get('/productos/{id}', function () {
-    return "Studnets LIst";
-});
-
-Route::post('/productos', function () {
-    return "Studnets LIst";
-});
-
-Route::put('/productos/{id}', function () {
-    return "Studnets LIst";
-});
-
-
-Route::delete('/productos/{id}', function () {
-    return "Studnets LIst";
-});
+Route::get('/productos', [productosController::class, 'index']);
+Route::get('/productos/{id}', [productosController::class, 'show']);
+Route::post('/productos', [productosController::class, 'store']);
+Route::put('/productos/{id}', [productosController::class, 'update']);
+Route::delete('/productos/{id}', [productosController::class, 'destroy']);
